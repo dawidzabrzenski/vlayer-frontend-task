@@ -3,4 +3,17 @@
 
 @theme {
   --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  --color-font: hsla(227, 100%, 8%, 1);
+
+  --color-primary: hsla(248, 100%, 66%, 1);
+  --color-primary-hover: hsla(241, 100%, 77%, 1);
+  --color-primary-border: hsla(248, 80%, 47%, 1);
+  --color-primary-active: hsla(248, 99%, 56%, 1);
+
+  --color-secondary: hsla(232, 22%, 87%, 1);
+}
+
+.button-main {
+  @apply px-8 py-3 text-base leading-[150%] font-bold;
 }
