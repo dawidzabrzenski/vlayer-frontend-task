@@ -1,4 +1,5 @@
 import ProductCard from "../components/Card/ProductCard";
+import Tabs from "../components/Tabs";
 
 function Offer() {
   const houses = [
@@ -24,6 +25,9 @@ function Offer() {
 
   return (
     <section className="mt-12 flex flex-col gap-12">
+      <div className="flex justify-center">
+        <Tabs />
+      </div>
       <div className="flex flex-col gap-6 px-8 text-center">
         <h2 className="text-3xl font-bold leading-[125%] tracking-[-0.01rem]">
           We make it easy for houses and apartments.
