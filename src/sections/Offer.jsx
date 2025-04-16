@@ -25,7 +25,7 @@ function Offer() {
 
   return (
     <section className="mt-12 flex flex-col gap-12">
-      <div className="flex justify-center">
+      <div className="flex justify-center px-8">
         <Tabs />
       </div>
       <div className="flex flex-col gap-6 px-8 text-center">
