@@ -5,23 +5,23 @@
   --font-sans: "Plus Jakarta Sans", sans-serif;
 
   --color-font: hsla(227, 100%, 8%, 1);
-
+  --color-font-gray: hsla(224, 9%, 53%, 1);
   --color-background-lavender: rgba(243, 243, 255, 255);
-
   --color-primary: hsla(248, 100%, 66%, 1);
   --color-primary-hover: hsla(241, 100%, 77%, 1);
   --color-primary-border: hsla(248, 80%, 47%, 1);
   --color-primary-active: hsla(248, 99%, 56%, 1);
   --color-primary-active-dark: hsla(248, 82%, 37%, 1);
-
   --color-disabled: hsla(232, 17%, 75%, 1);
   --color-disabled-text: hsla(224, 9%, 49%, 1);
-
   --color-secondary: hsla(232, 22%, 87%, 1);
+
+  --text-3xl: 2rem;
+  --text-3xl--line-height: calc(2.25 / 1.875);
 }
 
 .button-main {
-  @apply w-full rounded-lg px-8 py-3 text-base leading-[150%] font-bold transition-all duration-200 ease-in-out focus:outline-none;
+  @apply w-full rounded-lg px-8 py-3 text-base font-bold leading-[150%] transition-all duration-200 ease-in-out focus:outline-none;
 }
 
 .gradient-center {

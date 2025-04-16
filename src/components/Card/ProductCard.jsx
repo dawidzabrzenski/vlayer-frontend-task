@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import HeartButton from "./HeartButton";
 
 const ProductCard = ({ compact, price, type, title, address, imageUrl }) => {
   return (
@@ -12,7 +12,7 @@ const ProductCard = ({ compact, price, type, title, address, imageUrl }) => {
           className="h-48 w-full rounded-t-2xl object-cover"
         />
         {type && !compact && (
-          <span className="absolute bottom-0 -left-2 flex translate-y-1/2 gap-1 rounded-lg bg-indigo-500 px-3 py-2 text-xs font-bold text-white uppercase">
+          <span className="bg-primary absolute -left-2 bottom-0 flex translate-y-1/2 gap-1 rounded-lg px-3 py-2 text-xs font-bold uppercase text-white">
             <img src="./assets/sparkles.svg" /> {type}
           </span>
         )}
@@ -27,11 +27,7 @@ const ProductCard = ({ compact, price, type, title, address, imageUrl }) => {
               /month
             </span>
           </p>
-          {!compact && (
-            <button className="text-primary">
-              <Heart size={20} />
-            </button>
-          )}
+          {!compact && <HeartButton />}
         </div>
         <h2 className="text-font text-xl font-bold">{title}</h2>
         <p className="text-font truncate text-sm opacity-50">{address}</p>

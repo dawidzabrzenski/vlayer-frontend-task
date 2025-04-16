@@ -3,22 +3,26 @@ import ProductCard from "../components/Card/ProductCard";
 function Hero() {
   return (
     <section>
-      <div className="gradient-center flex flex-col gap-8 px-8 pt-12 pb-6">
-        <h2 className="text-center text-[40px] leading-[110%] font-bold -tracking-wider">
+      <div className="gradient-center flex flex-col gap-8 px-8 pb-6 pt-12">
+        <h2 className="text-center text-[40px] font-bold leading-[110%] -tracking-wider">
           Buy, rent, or sell your property easily
         </h2>
-        <p className="text-center text-xl leading-[160%] font-medium tracking-[0.015em]">
+        <p className="text-center text-xl font-medium leading-[160%] tracking-[0.015em]">
           A great platform to buy, sell, or even rent your properties without
           any commisions.
         </p>
         <div className="flex justify-evenly gap-4">
           <div className="border-secondary flex flex-col border-l-4 px-6">
             <p className="text-primary text-3xl font-bold">50k+</p>
-            <p>renters</p>
+            <p className="text-font-gray text-base font-medium leading-[150%]">
+              renters
+            </p>
           </div>
           <div className="border-secondary flex flex-col border-l-4 px-6">
             <p className="text-primary text-3xl font-bold">10k+</p>
-            <p>properties</p>
+            <p className="text-font-gray text-base font-medium leading-[150%]">
+              properties
+            </p>
           </div>
         </div>
       </div>
@@ -26,10 +30,9 @@ function Hero() {
         <img className="relative px-12" src="./assets/map.png" />
         <div className="absolute -left-10 scale-[0.6]">
           <ProductCard
-            compact
-            price="$3,440"
-            title="Palm Harbor"
-            address="2699 Green Valley, Highland..."
+            price="$2,700"
+            title="Beverly Springfield"
+            address="2821 Lake Sevilla, Palm Harbor, TX"
             imageUrl="./assets/apartments/apartment-1.png"
           />
         </div>
