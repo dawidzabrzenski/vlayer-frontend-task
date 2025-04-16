@@ -42,3 +42,11 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.tab-active {
+  @apply text-primary outline-secondary/30 hover:bg-secondary rounded-lg bg-white px-10 py-2 text-[1.125rem] font-bold tracking-[-0.5px] outline;
+}
+
+.tab-nonactive {
+  @apply text-font-gray hover:text-primary rounded-lg px-10 py-2 text-[1.125rem] font-medium tracking-[-0.5px];
+}
