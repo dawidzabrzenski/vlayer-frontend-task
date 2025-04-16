@@ -3,14 +3,19 @@ import HeartButton from "./HeartButton";
 const ProductCard = ({ compact, price, type, title, address, imageUrl }) => {
   return (
     <div
-      className={`border-secondary max-w-sm rounded-2xl ${compact ? "shadow-sm" : "border"} bg-white`}
+      className={`border-secondary w-[300px] rounded-2xl ${
+        compact ? "shadow-sm" : "border"
+      } shrink-0 bg-white`}
     >
-      <div className="relative">
-        <img
-          src={imageUrl}
-          alt={title}
-          className="h-48 w-full rounded-t-2xl object-cover"
-        />
+      <div className="relative w-full rounded-t-2xl">
+        <div className="h-48 w-full overflow-hidden rounded-t-2xl">
+          <img
+            src={imageUrl}
+            alt={title}
+            className="h-full w-full object-cover"
+          />
+        </div>
+
         {type && !compact && (
           <span className="bg-primary absolute -left-2 bottom-0 flex translate-y-1/2 gap-1 rounded-lg px-3 py-2 text-xs font-bold uppercase text-white">
             <img src="./assets/sparkles.svg" /> {type}
@@ -18,7 +23,9 @@ const ProductCard = ({ compact, price, type, title, address, imageUrl }) => {
         )}
       </div>
       <div
-        className={`flex flex-col gap-y-2 px-4 ${compact ? "pt-4" : "pt-8"} pb-4`}
+        className={`flex flex-col gap-y-2 px-4 ${
+          compact ? "pt-4" : "pt-8"
+        } pb-4`}
       >
         <div className="flex items-center justify-between">
           <p className="text-primary flex items-end gap-1 text-2xl font-extrabold tracking-tight">

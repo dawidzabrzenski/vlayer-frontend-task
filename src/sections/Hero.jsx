@@ -30,6 +30,7 @@ function Hero() {
         <img className="relative px-12" src="./assets/map.png" />
         <div className="absolute -left-10 scale-[0.6]">
           <ProductCard
+            compact
             price="$2,700"
             title="Beverly Springfield"
             address="2821 Lake Sevilla, Palm Harbor, TX"
