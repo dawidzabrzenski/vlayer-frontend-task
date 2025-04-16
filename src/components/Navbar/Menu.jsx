@@ -1,10 +1,25 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Button from "../Button";
 
 function Menu({ isOpen, setIsOpen }) {
-  const menuVariants = {
-    hidden: { x: "100%", opacity: 0 },
-    visible: { x: 0, opacity: 1 },
+  const backdropVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const menuContainerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const menuItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const menuLinks = [
@@ -16,34 +31,58 @@ function Menu({ isOpen, setIsOpen }) {
   ];
 
   return (
-    <motion.nav
-      className={`fixed inset-0 z-20 flex flex-col items-center justify-end bg-white/60 backdrop-blur-md ${
-        isOpen ? "block" : "hidden"
-      }`}
-      variants={menuVariants}
-      initial="hidden"
-      animate={isOpen ? "visible" : "hidden"}
-      transition={{ duration: 0.3 }}
-      aria-label="Mobile navigation"
-    >
-      <ul className="flex flex-col gap-8 py-9">
-        {menuLinks.map((el) => (
-          <li key={el.name}>
-            <a
-              className="text-3xl leading-[150%] font-medium"
-              href={el.href}
-              onClick={() => setIsOpen(false)}
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            className="fixed inset-0 z-10 bg-white/70 backdrop-blur-md"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={backdropVariants}
+            transition={{ duration: 0.2 }}
+          />
+
+          <motion.nav
+            className="fixed inset-0 z-20 flex flex-col justify-between px-6 py-9"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={menuContainerVariants}
+            aria-label="Mobile navigation"
+          >
+            <motion.ul
+              className="my-auto flex flex-col gap-8"
+              variants={menuContainerVariants}
             >
-              {el.name}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <div className="flex flex-col">
-        <Button type="primary">Button</Button>
-        <Button type="secondary" />
-      </div>
-    </motion.nav>
+              {menuLinks.map((el) => (
+                <motion.li key={el.name} variants={menuItemVariants}>
+                  <a
+                    className="text-3xl leading-[150%] font-medium"
+                    href={el.href}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {el.name}
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
+
+            <motion.div
+              className="flex w-full flex-col gap-6"
+              variants={menuContainerVariants}
+            >
+              <motion.div variants={menuItemVariants}>
+                <Button type="secondary">Login</Button>
+              </motion.div>
+              <motion.div variants={menuItemVariants}>
+                <Button type="primary">Sign Up</Button>
+              </motion.div>
+            </motion.div>
+          </motion.nav>
+        </>
+      )}
+    </AnimatePresence>
   );
 }
 
