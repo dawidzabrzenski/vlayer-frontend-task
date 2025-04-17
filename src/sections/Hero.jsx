@@ -34,7 +34,7 @@ function Hero() {
             price="$2,700"
             title="Beverly Springfield"
             address="2821 Lake Sevilla, Palm Harbor, TX"
-            imageUrl="./assets/apartments/apartment-1.png"
+            imageUrl="./assets/apartments/apartment-3.png"
           />
         </div>
       </div>
