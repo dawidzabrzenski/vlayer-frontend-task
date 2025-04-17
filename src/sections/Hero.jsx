@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import CountUp from "react-countup";
+import AnimatedCounter from "../components/AnimatedCounter"; // import nowego komponentu
 import ProductCard from "../components/Card/ProductCard";
 
 const containerVariants = {
@@ -40,41 +40,28 @@ function Hero() {
           variants={itemVariants}
         >
           <div className="border-secondary flex flex-col border-l-4 px-6">
-            <CountUp
+            {/* Używamy AnimatedCounter zamiast CountUp */}
+            <AnimatedCounter
               start={0}
               end={50}
               duration={2}
               delay={1}
               separator=","
-              suffix="+"
-            >
-              {({ countUpRef }) => (
-                <p
-                  className="text-primary text-3xl font-bold"
-                  ref={countUpRef}
-                />
-              )}
-            </CountUp>
+              suffix="k+"
+            />
             <p className="text-font-gray text-base font-medium leading-[150%]">
               renters
             </p>
           </div>
           <div className="border-secondary flex flex-col border-l-4 px-6">
-            <CountUp
+            <AnimatedCounter
               start={0}
               end={10}
               duration={2}
               delay={2}
               separator=","
-              suffix="+"
-            >
-              {({ countUpRef }) => (
-                <p
-                  className="text-primary text-3xl font-bold"
-                  ref={countUpRef}
-                />
-              )}
-            </CountUp>
+              suffix="k+"
+            />
             <p className="text-font-gray text-base font-medium leading-[150%]">
               properties
             </p>
