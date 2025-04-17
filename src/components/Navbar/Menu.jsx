@@ -10,7 +10,6 @@ function Menu({ isOpen, setIsOpen }) {
       document.body.classList.remove("overflow-hidden");
     }
 
-    // Cleanup na wypadek odmontowania
     return () => {
       document.body.classList.remove("overflow-hidden");
     };

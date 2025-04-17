@@ -8,7 +8,7 @@ import {
 
 function Footer() {
   return (
-    <section className="flex flex-col gap-6 px-6 pb-8 pt-1">
+    <section className="flex flex-col gap-6 px-6 py-8">
       <div className="flex flex-col gap-6">
         <Logo />
         <ul className="flex flex-wrap justify-center gap-x-24 gap-y-6 px-4 text-center text-base font-medium leading-[160%] opacity-50">
