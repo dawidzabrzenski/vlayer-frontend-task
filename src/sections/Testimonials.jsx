@@ -24,10 +24,10 @@ function Testimonials() {
   ];
 
   return (
-    <section className="gradient-down flex flex-col gap-6 px-8 py-8 text-center">
+    <section className="gradient-down flex flex-col gap-6 px-8 py-8 text-center md:items-center md:gap-12">
       <div className="flex flex-col gap-4 px-6">
         <h3 className="section-title">Testimonials</h3>
-        <p className="text-center text-[16px] font-normal leading-[160%] tracking-[0%] text-black/70">
+        <p className="text-center text-[16px] font-normal leading-[160%] tracking-[0%] text-black/70 md:max-w-[352px]">
           See what our property managers, landlords, and tenants have to say
         </p>
       </div>
@@ -39,9 +39,11 @@ function Testimonials() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.2 }}
-          className="flex flex-col gap-4 px-6"
+          className="flex flex-col gap-4 px-6 md:items-center md:gap-9"
         >
-          <p className="section-description-bold">{people[activeIndex].desc}</p>
+          <p className="section-description-bold max-w-[736px] text-center">
+            {people[activeIndex].desc}
+          </p>
           <p className="text-base font-bold leading-[150%]">
             {people[activeIndex].name},{" "}
             <span className="text-font-gray font-normal">Renter</span>
@@ -49,7 +51,7 @@ function Testimonials() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="flex justify-evenly gap-4 px-6">
+      <div className="flex justify-evenly gap-4 px-6 md:gap-12">
         {people.map((person, index) => (
           <div
             key={index}

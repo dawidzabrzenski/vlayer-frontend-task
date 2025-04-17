@@ -19,10 +19,12 @@
 
   --text-3xl: 2rem;
   --text-3xl--line-height: calc(2.25 / 1.875);
+  --text-6xl: 4rem;
+  --text-6xl--line-height: 1;
 }
 
 .button-main {
-  @apply w-full rounded-lg px-8 py-3 text-base font-bold leading-[150%] transition-all duration-200 ease-in-out focus:outline-none;
+  @apply w-full min-w-[140px] rounded-lg px-8 py-3 text-base font-bold leading-[150%] ring-inset transition-all duration-200 ease-in-out focus:outline-none md:w-fit;
 }
 
 .gradient-center {
@@ -68,7 +70,7 @@
 }
 
 .section-description-bold {
-  @apply text-center text-xl font-medium leading-[160%] tracking-[0.015em];
+  @apply text-xl font-medium leading-[160%] tracking-[0.015em];
 }
 
 .ribbon {

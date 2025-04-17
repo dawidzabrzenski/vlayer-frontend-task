@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Button from "../Button";
 
-function Menu({ isOpen, setIsOpen }) {
+function Menu({ isOpen, setIsOpen, menuLinks }) {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-hidden");
@@ -35,20 +35,12 @@ function Menu({ isOpen, setIsOpen }) {
     visible: { opacity: 1, y: 0 },
   };
 
-  const menuLinks = [
-    { name: "Rent", href: "#" },
-    { name: "Buy", href: "#" },
-    { name: "Sell", href: "#" },
-    { name: "Manage Property", href: "#" },
-    { name: "Resources", href: "#" },
-  ];
-
   return (
     <AnimatePresence>
       {isOpen && (
         <>
           <motion.div
-            className="fixed inset-0 z-10 bg-white/70 backdrop-blur-md"
+            className="fixed inset-0 z-10 bg-white/70 backdrop-blur-md md:hidden"
             initial="hidden"
             animate="visible"
             exit="hidden"
@@ -57,7 +49,7 @@ function Menu({ isOpen, setIsOpen }) {
           />
 
           <motion.nav
-            className="fixed inset-0 z-20 flex flex-col justify-between px-6 py-9"
+            className="fixed inset-0 z-20 flex flex-col justify-between px-6 py-9 md:hidden"
             initial="hidden"
             animate="visible"
             exit="hidden"

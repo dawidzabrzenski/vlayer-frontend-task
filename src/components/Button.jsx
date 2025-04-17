@@ -3,7 +3,7 @@ function Button({ children, type, disabled }) {
     return (
       <button
         disabled={disabled}
-        className="button-main bg-primary hover:bg-primary-hover focus:ring-primary-border active:bg-primary-active disabled:bg-disabled text-white focus:ring-2"
+        className="button-main bg-primary hover:bg-primary-hover focus:ring-primary-border active:bg-primary-active disabled:bg-disabled h-fit text-white focus:ring-2"
       >
         {children}
       </button>

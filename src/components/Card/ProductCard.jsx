@@ -23,7 +23,7 @@ const ProductCard = ({ compact, price, type, title, address, imageUrl }) => {
         )}
       </div>
       <div
-        className={`flex flex-col gap-y-2 px-4 ${
+        className={`border-secondary flex flex-col gap-y-2 rounded-lg rounded-t-none border border-t-0 px-4 ${
           compact ? "pt-4" : "pt-8"
         } pb-4`}
       >

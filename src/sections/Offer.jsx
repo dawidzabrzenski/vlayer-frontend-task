@@ -76,17 +76,17 @@ function Offer() {
           onTabChange={handleTabChange}
         />
       </div>
-      <div className="flex flex-col gap-6 px-8 text-center">
-        <h3 className="section-title">
+      <div className="flex flex-col gap-6 px-8 text-center md:items-center">
+        <h3 className="section-title md:max-w-[544px]">
           We make it easy for houses and apartments.
         </h3>
-        <p className="text-font-gray text-base font-medium leading-[160%]">
+        <p className="text-font-gray text-base font-medium leading-[160%] md:max-w-[544px]">
           Whether it’s selling your current home, getting financing, or buying a
           new home, we make it easy and efficient. The best part? you’ll save a
           bunch of money and time with our services.
         </p>
       </div>
-      <div className="scrollbar-hide flex snap-x snap-mandatory gap-5 overflow-x-auto pl-8 pr-8">
+      <div className="scrollbar-hide flex snap-x snap-mandatory gap-5 overflow-x-auto pl-8 pr-8 md:justify-center md:gap-9">
         {activeList.map((el, index) => (
           <motion.div
             key={`${activeTab}-${el.title}`}
