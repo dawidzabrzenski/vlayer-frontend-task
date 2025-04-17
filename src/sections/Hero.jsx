@@ -4,10 +4,8 @@ function Hero() {
   return (
     <section>
       <div className="gradient-center flex flex-col gap-8 px-8 pb-6 pt-12">
-        <h2 className="text-center text-[40px] font-bold leading-[110%] -tracking-wider">
-          Buy, rent, or sell your property easily
-        </h2>
-        <p className="text-center text-xl font-medium leading-[160%] tracking-[0.015em]">
+        <h2 className="text-center">Buy, rent, or sell your property easily</h2>
+        <p className="section-description-bold">
           A great platform to buy, sell, or even rent your properties without
           any commisions.
         </p>
@@ -34,7 +32,7 @@ function Hero() {
             price="$2,700"
             title="Beverly Springfield"
             address="2821 Lake Sevilla, Palm Harbor, TX"
-            imageUrl="./assets/apartments/apartment-3.png"
+            imageUrl="./assets/apartments/apartment-3.webp"
           />
         </div>
       </div>

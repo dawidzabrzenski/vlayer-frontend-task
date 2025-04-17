@@ -17,7 +17,7 @@ const ProductCard = ({ compact, price, type, title, address, imageUrl }) => {
         </div>
 
         {type && !compact && (
-          <span className="bg-primary absolute -left-2 bottom-0 flex translate-y-1/2 gap-1 rounded-lg px-3 py-2 text-xs font-bold uppercase text-white">
+          <span className="bg-primary before:border-r-primary ribbon absolute -left-3 bottom-0 flex translate-y-1/2 gap-1 rounded-lg px-4 py-2 text-xs font-bold uppercase text-white">
             <img src="./assets/sparkles.svg" /> {type}
           </span>
         )}

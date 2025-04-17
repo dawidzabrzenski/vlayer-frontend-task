@@ -35,6 +35,14 @@
   );
 }
 
+.gradient-down {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(244, 239, 254, 1) 100%
+  );
+}
+
 .scrollbar-hide {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -44,7 +52,7 @@
 }
 
 .tab-main {
-  @apply relative z-10 px-10 py-2 text-[1.125rem] tracking-[-0.5px] rounded-lg transition-colors duration-300
+  @apply relative z-10 rounded-lg px-10 py-2 text-[1.125rem] tracking-[-0.5px] transition-colors duration-300;
 }
 
 .tab-active {
@@ -52,5 +60,17 @@
 }
 
 .tab-nonactive {
-  @apply text-font-gray hover:text-primary font-medium ;
+  @apply text-font-gray hover:text-primary font-medium;
+}
+
+.section-title {
+  @apply text-3xl font-bold leading-[125%] tracking-[-0.01rem];
+}
+
+.section-description-bold {
+  @apply text-center text-xl font-medium leading-[160%] tracking-[0.015em];
+}
+
+.ribbon {
+  @apply before:absolute before:bottom-0 before:left-0 before:top-[11px] before:border-b-[18px] before:border-r-[12px] before:border-t-[15px] before:border-b-transparent before:border-t-transparent before:content-[''];
 }
