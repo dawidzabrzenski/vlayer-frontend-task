@@ -3,8 +3,8 @@ import HeartButton from "./HeartButton";
 const ProductCard = ({ compact, price, type, title, address, imageUrl }) => {
   return (
     <div
-      className={`border-secondary w-[300px] rounded-2xl ${
-        compact ? "shadow-sm" : "border"
+      className={`w-[300px] rounded-2xl ${
+        compact ? "shadow-sm" : ""
       } shrink-0 bg-white`}
     >
       <div className="relative w-full rounded-t-2xl">

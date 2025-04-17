@@ -1,7 +1,21 @@
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Button from "../Button";
 
 function Menu({ isOpen, setIsOpen }) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Cleanup na wypadek odmontowania
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isOpen]);
+
   const backdropVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -58,7 +72,7 @@ function Menu({ isOpen, setIsOpen }) {
               {menuLinks.map((el) => (
                 <motion.li key={el.name} variants={menuItemVariants}>
                   <a
-                    className="text-3xl leading-[150%] font-medium"
+                    className="text-3xl font-medium leading-[150%]"
                     href={el.href}
                     onClick={() => setIsOpen(false)}
                   >

@@ -86,7 +86,7 @@ function Offer() {
           bunch of money and time with our services.
         </p>
       </div>
-      <div className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto pl-8 pr-8">
+      <div className="scrollbar-hide flex snap-x snap-mandatory gap-5 overflow-x-auto pl-8 pr-8">
         {activeList.map((el, index) => (
           <motion.div
             key={`${activeTab}-${el.title}`}
