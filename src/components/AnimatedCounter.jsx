@@ -1,29 +1,14 @@
-import { useEffect, useState } from "react";
-import CountUp from "react-countup";
+import { useCountUp } from "use-count-up";
 
-function AnimatedCounter({ start, end, duration, delay, separator, suffix }) {
-  const [isClient, setIsClient] = useState(false);
+function AnimatedCounter({ start, end, duration }) {
+  const { value } = useCountUp({
+    isCounting: true,
+    start,
+    end,
+    duration,
+  });
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return <span>0</span>;
-
-  return (
-    <CountUp
-      start={start}
-      end={end}
-      duration={duration}
-      delay={delay}
-      separator={separator}
-      suffix={suffix}
-    >
-      {({ countUpRef }) => (
-        <p className="text-primary text-3xl font-bold" ref={countUpRef} />
-      )}
-    </CountUp>
-  );
+  return <p className="text-primary text-3xl font-bold">{value}k+</p>;
 }
 
 export default AnimatedCounter;
