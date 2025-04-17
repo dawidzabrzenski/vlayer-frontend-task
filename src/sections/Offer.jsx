@@ -67,15 +67,30 @@ function Offer() {
     }),
   };
 
+  const visibilityVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <section className="my-12 flex flex-col gap-12">
-      <div className="flex justify-center px-8">
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      variants={visibilityVariants}
+      className="my-12 flex flex-col gap-12"
+    >
+      <motion.div className="flex justify-center px-8">
         <Tabs
           tabs={["Houses", "Apartments"]}
           defaultTab="Houses"
           onTabChange={handleTabChange}
         />
-      </div>
+      </motion.div>
       <div className="flex flex-col gap-6 px-8 text-center md:items-center">
         <h3 className="section-title md:max-w-[544px]">
           We make it easy for houses and apartments.
@@ -105,7 +120,7 @@ function Offer() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
