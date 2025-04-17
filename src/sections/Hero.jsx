@@ -19,6 +19,7 @@ const itemVariants = {
 function Hero() {
   return (
     <motion.section
+      className="min-h-screen"
       variants={containerVariants}
       initial="hidden"
       animate="show"
