@@ -51,7 +51,7 @@ function Testimonials() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="flex justify-evenly gap-4 px-6 md:gap-12">
+      <div className="flex justify-evenly gap-4 md:gap-12 md:px-6">
         {people.map((person, index) => (
           <div
             key={index}

@@ -16,17 +16,24 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="border-b-1 border-secondary sticky top-0 z-30 flex items-center justify-between bg-white px-8 py-5 md:px-16">
-      <Logo />
-
-      <div className="flex items-center md:hidden">
-        <BurgerIcon isOpen={isOpen} setIsOpen={setIsOpen} />
-        <Menu isOpen={isOpen} setIsOpen={setIsOpen} menuLinks={menuLinks} />
+    <nav className="border-secondary sticky top-0 z-30 border-b bg-white px-8 py-5 md:px-16">
+      <div className="flex w-full items-center justify-between md:hidden">
+        <Logo />
+        <div className="flex items-center">
+          <BurgerIcon isOpen={isOpen} setIsOpen={setIsOpen} />
+        </div>
       </div>
 
-      <div className="hidden w-2/3 items-center justify-between gap-16 md:flex">
-        <NavLinks links={menuLinks} />
-        <div className="flex gap-4">
+      <Menu isOpen={isOpen} setIsOpen={setIsOpen} menuLinks={menuLinks} />
+
+      <div className="hidden w-full items-center md:grid md:grid-cols-3">
+        <div className="flex items-center">
+          <Logo />
+        </div>
+        <div className="flex justify-center">
+          <NavLinks links={menuLinks} />
+        </div>
+        <div className="flex justify-end gap-4">
           <Button type="secondary">Login</Button>
           <Button type="primary">Sign Up</Button>
         </div>
@@ -42,7 +49,7 @@ function NavLinks({ links }) {
         <li key={el.name}>
           <a
             href={el.href}
-            className="hover:text-primary text-base font-medium leading-6 transition-colors duration-200"
+            className="hover:text-primary whitespace-nowrap text-base font-medium leading-6 transition-colors duration-200"
           >
             {el.name}
           </a>

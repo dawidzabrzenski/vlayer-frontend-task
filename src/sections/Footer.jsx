@@ -6,15 +6,22 @@ import {
   FaLinkedin as Linkedin,
 } from "react-icons/fa";
 
+const footerLinks = ["help-center", "faq", "terms & privacy"];
+
 function Footer() {
   return (
     <section className="flex flex-col gap-6 px-6 py-8 md:gap-10 md:px-24">
       <div className="flex flex-col gap-6 md:flex-row md:justify-between md:px-2">
         <Logo />
         <ul className="flex flex-wrap justify-center gap-x-24 gap-y-6 px-4 text-center text-base font-medium leading-[160%] opacity-50">
-          <li className="cursor-pointer">HELP CENTER</li>
-          <li className="cursor-pointer">FAQ</li>
-          <li className="cursor-pointer">TERMS & PRIVACY</li>
+          {footerLinks.map((link) => (
+            <li
+              key={link}
+              className="hover:text-primary cursor-pointer uppercase transition-colors duration-200"
+            >
+              {link}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="bg-font-gray h-[1px] opacity-20"></div>
